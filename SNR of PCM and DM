@@ -1,0 +1,23 @@
+% SNR Calculations of PCM
+clc
+clear all
+close all
+disp('************SNR calculations for PCM ****************')
+N=input('\n Enter number of bits used in PCM (N) :');
+SNRDB1=(1.8+6*N);
+SNRDB2=(4.8+6*N);
+disp('SNR(dB) for PCM if signal is sinusoidal is = ')
+disp(SNRDB1);
+disp('SNR(dB) for PCM if signal is non-sinusoidal is = ')
+disp(SNRDB2);
+disp('\n----------------------------------------------------\n')
+disp('\n SNR(dB) for DM ')
+fm=input('\nEnter modulating signal frquency used in DM(fm in Hz) :');
+% Lets assume bandwidth W=fm
+W=fm;
+fs=input('\nEnter sampling frquency used in DM(fs in Hz) :');
+SNR3=(3*fs^3)/(8*pi^2*W*fm^2);
+SNRDB3=10*log10(SNR3);
+disp('SNR(dB) for DM is = ')
+disp(SNRDB3);
+disp('----------------------------------------------------')
